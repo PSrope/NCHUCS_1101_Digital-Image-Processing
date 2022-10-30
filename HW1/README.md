@@ -145,15 +145,15 @@
     return np.array([[X1[0], X2[0], 0], [X1[1], X2[1], 0], [X1[2], X2[2], 1]])
     ```
     令 (x, y) 為轉置後座標，(v, w)為原座標，T 為 Affine Matrix  
-    ![公式1](img_forREADME/MatrixT_公式1.jpg)
+    ![公式1](img_forREADME/MatrixT_公式1.jpg)  
     把原影像的三個點(v1, w1), (v2, w2), (v3, w3)分別帶進去，得：  
-    ![公式2](img_forREADME/MatrixT_公式2.jpg)
+    ![公式2](img_forREADME/MatrixT_公式2.jpg)  
     而程式當中  
-    ![公式3](img_forREADME/MatrixT_公式3.jpg)
+    ![公式3](img_forREADME/MatrixT_公式3.jpg)  
     第一個 B：  
-    ![公式4](img_forREADME/MatrixT_公式4.jpg)
+    ![公式4](img_forREADME/MatrixT_公式4.jpg)  
     第二個B：  
-    ![公式5](img_forREADME/MatrixT_公式5.jpg)
+    ![公式5](img_forREADME/MatrixT_公式5.jpg)  
   * bilinear ：實作雙線性差值法
     ```
     def bilinear(x, y, img):
