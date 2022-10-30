@@ -129,27 +129,27 @@
     ```
 
 ## 結果 => 依步驟逐步來看
-1. 第一步：將原圖做 Laplacian Mask 捲積
+1. 第一步：將原圖做 Laplacian Mask 捲積  
    ![result1-1](img_forREADME/result1-1.jpg)  
    看似已經把細節標示出來，然而，如果我們把它和原圖相加：  
    ![result1-2](img_forREADME/result1-2.jpg)  
    可以看到其實有很多雜訊在上面(所以才需要後面的步驟！)  
-2. 第二步：將原圖做一階微分
+2. 第二步：將原圖做一階微分  
    方法1. 用Sobel Mask 做捲積  
    ![result2-1](img_forREADME/result2-1.jpg)  
    方法2. 用gradient equation 公式  
    ![result2-2](img_forREADME/result2-2.jpg)  
    一階微分的目的在於”取出邊緣”。可以看到方法2 多出了很多細節。  
     (而且老師說以他的經驗也是方法2 較優..) 所以我採方法2 的圖繼續。  
-3. 第三步：將一階微分結果做 Gaussian Blur 捲積
+3. 第三步：將一階微分結果做 Gaussian Blur 捲積  
    ![result3](img_forREADME/result3.jpg)  
    模糊的主要目的：去除雜訊。  
    取一階微分的同時，可能一些細微的雜訊也跟著被放大了，所以這邊透過模糊在把它變回去。
-4. 第四步：將模糊結果正規化，並乘上原圖做 Laplacian Mask 之結果 
+4. 第四步：將模糊結果正規化，並乘上原圖做 Laplacian Mask 之結果  
    ![result4](img_forREADME/result4.jpg)  
    這樣就可以留下真正式細節的部份  
-5. 第五步：將強化的線條加到原圖上 
+5. 第五步：將強化的線條加到原圖上  
    ![result5](img_forREADME/result5.jpg)  
    得到結果～ 
-* 最終比較：
+* 最終比較：  
   ![result5](img_forREADME/result_compare.jpg)  
